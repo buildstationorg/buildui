@@ -2,6 +2,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import Script from "next/script";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -41,6 +42,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Script
+        defer
+        src="https://analytics.zxstim.com/script.js"
+        data-website-id="5d8c6e17-7fd8-40d4-999c-3814e4b25abe"
+      />
       <body className={`${jetBrainsMono.className} antialiased`}>
         <ThemeProvider
           attribute="class"
